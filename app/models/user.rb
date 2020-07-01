@@ -1,8 +1,6 @@
 class User < ApplicationRecord
-  has_secure_password
-  has_many :items
-
-  validates_presence_of :email :password
-  validates :password, length: {in: 6..20}
-  validetes_uniqueness_of :email
+    has_many :items
+    validates_presence_of :email, :name, :age, :gender, :address
+    validates_uniqueness_of :email
+    validates_inclusion_of :gender, :in => ['male', 'female', 'other']
 end
