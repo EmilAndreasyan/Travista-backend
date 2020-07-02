@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country_id: 1
+  name: MyString
+  image: MyString
+  population: 1
+  description: MyString
+
+two:
+  country_id: 1
+  name: MyString
+  image: MyString
+  population: 1
+  description: MyString
