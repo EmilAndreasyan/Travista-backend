@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_07_01_001131) do
     t.boolean "in_stock"
     t.string "color"
     t.string "image"
+    t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

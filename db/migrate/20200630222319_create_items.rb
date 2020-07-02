@@ -8,6 +8,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.boolean :in_stock
       t.string :color
       t.string :image
+      t.string :gender
 
       t.timestamps
     end

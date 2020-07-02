@@ -13,12 +13,15 @@ Item.destroy_all
 user1 = User.create(name: Faker::Name.name, email: Faker::Internet.email, age: rand(18..80), gender: Faker::Gender.binary_type, address: Faker::Address.full_address, image: 'https://picsum.photos/200')
 user2 = User.create(name: Faker::Name.name, email: Faker::Internet.email, age: rand(18..80), gender: Faker::Gender.binary_type, address: Faker::Address.full_address, image: 'https://picsum.photos/200')
 
-item1 = Item.create(name: 'cardigan', size: 'xs', price: rand(1..200), in_stock: true, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', user: user1)
+item1 = Item.create(name: 'cardigan', size: 'xs', price: rand(1..200), in_stock: Faker::Boolean.boolean, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', gender: Faker::Gender.binary_type, user: user1)
 
-item2 = Item.create(name: 'trousers', size: 's', price: rand(1..200), in_stock: true, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', user: user1)
+item2 = Item.create(name: 'trousers', size: 's', price: rand(1..200), in_stock: Faker::Boolean.boolean, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', gender: Faker::Gender.binary_type, user: user1)
 
-item3 = Item.create(name: 'jeans', size: 'm', price: rand(1..200), in_stock: true, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', user: user2)
+item3 = Item.create(name: 'coat', size: 'xl', price: rand(1..200), in_stock: Faker::Boolean.boolean, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', gender: Faker::Gender.binary_type, user: user1)
 
-item4 = Item.create(name: 'blazer', size: 'l', price: rand(1..200), in_stock: true, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', user: user2)
+item4 = Item.create(name: 'jeans', size: 'm', price: rand(1..200), in_stock: Faker::Boolean.boolean, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', gender: Faker::Gender.binary_type, user: user2)
 
+item5 = Item.create(name: 'blazer', size: 'l', price: rand(1..200), in_stock: Faker::Boolean.boolean, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', gender: Faker::Gender.binary_type, user: user2)
+
+item6 = Item.create(name: 'shirt', size: 'm', price: rand(1..200), in_stock: Faker::Boolean.boolean, color: Faker::Color.hex_color, image: 'https://picsum.photos/200', gender: Faker::Gender.binary_type, user: user2)
 

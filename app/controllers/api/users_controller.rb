@@ -1,6 +1,7 @@
 class Api::V1::UsersController < ApplicationController
     
 def index
+    binding.pry
     @users = User.all
     render json: @users
 end

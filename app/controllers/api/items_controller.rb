@@ -13,7 +13,8 @@ class Api::V1::ItemsController < ApplicationController
 
     def create
         @item = @user.item.build(item_params)
-        if @item.save
+        if @item.update_item(@item) != ("sorry, this item is out of stock" || "sorry, we don't have this item for your gender")
+            @item.save
             render json: @item
         else
             render json: {error: 'Error creating an item'}
@@ -40,7 +41,7 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def item_params
-        params.require(:item).permit(:user_id, :name, :size, :price, :in_stock, :color, :image)
+        params.require(:item).permit(:user_id, :name, :size, :price, :in_stock, :color, :image, :gender)
     end
     
 end
