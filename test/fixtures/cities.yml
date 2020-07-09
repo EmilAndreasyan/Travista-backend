@@ -3,13 +3,13 @@
 one:
   country_id: 1
   name: MyString
-  image: MyString
+  image_url: MyString
   population: 1
   description: MyString
 
 two:
   country_id: 1
   name: MyString
-  image: MyString
+  image_url: MyString
   population: 1
   description: MyString

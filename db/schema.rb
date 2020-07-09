@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_022427) do
+ActiveRecord::Schema.define(version: 2020_07_02_022302) do
 
   create_table "cities", force: :cascade do |t|
     t.integer "country_id"
     t.string "name"
-    t.string "image"
+    t.string "image_url"
     t.integer "population"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
@@ -24,21 +24,11 @@ ActiveRecord::Schema.define(version: 2020_07_02_022427) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
-    t.string "flag"
+    t.string "flag_url"
     t.string "capital"
     t.string "language"
     t.string "currency"
     t.float "area"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sightseeings", force: :cascade do |t|
-    t.integer "city_id"
-    t.string "category"
-    t.string "name"
-    t.string "image"
-    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

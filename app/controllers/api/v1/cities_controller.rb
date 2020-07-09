@@ -2,7 +2,11 @@ class Api::V1::CitiesController < ApplicationController
     before_action :set_country
 
     def index
-        @cities = @country.cities
+        if @country  # if parent is defined
+            @cities = @country.cities
+        else
+            @cities = City.all
+        end
         render json: @cities
     end
 
@@ -12,10 +16,10 @@ class Api::V1::CitiesController < ApplicationController
     end
 
     def create
-        @city = @country.city.build(city_params)
-        if @city.update_city(@city) != ("city name can't be blank" || "please, add a description")
+        @city = @country.cities.build(city_params)
+        if @country.update_city(@city) != ("city name can't be blank" || "please, add a description" || "the city already exists")
             @city.save
-            render json: @city
+            render json: @country
         else
             render json: {error: 'Error adding city'}
         end
@@ -38,16 +42,18 @@ class Api::V1::CitiesController < ApplicationController
     
 
     def destroy
-        @item = Item.find(params[:id])
-        @item.destroy
+        city = City.find(params[:id])
+        country = Country.find(city.country_id)
+        city.destroy
+        render json: country
     end
 
     private
     def set_country
-        @country = Country.find_by(params[:country_id])
+        @country = Country.find(params[:country_id])
     end
 
     def city_params
-        params.require(:city).permit(:country_id, :name, :image, :population, :description)
+        params.require(:city).permit(:country_id, :name, :image_url, :population, :description)
     end
 end

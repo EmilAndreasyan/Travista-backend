@@ -1,7 +1,7 @@
 class Api::V1::CountriesController < ApplicationController
 
     def index
-        binding.pry
+        #byebug
         @countries = Country.all
         render json: @countries
     end
@@ -12,11 +12,12 @@ class Api::V1::CountriesController < ApplicationController
     end
     
     def create
+        #byebug
         @country = Country.new(country_params)
-        if user.save
+        if @country.save
             render json: @country
         else
-            render json: {error: 'Error adding a Country'}
+            render json: {error: 'Error adding a country'}
         end
     end
     
@@ -25,7 +26,10 @@ class Api::V1::CountriesController < ApplicationController
     end
     
     def update
-        
+        @country = Country.find(params[:id])
+        @country.update(name: params["country"]["name"])
+        @country.save
+        render json: @country
     end
     
     
@@ -37,6 +41,6 @@ class Api::V1::CountriesController < ApplicationController
     private
     
     def country_params
-        params.require(:country).permit(:name, :flag, :capital, :language, :currency, :area)
+        params.require(:country).permit(:name, :flag_url, :capital, :language, :currency, :area)
     end  
 end

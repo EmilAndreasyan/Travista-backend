@@ -2,7 +2,7 @@
 
 one:
   name: MyString
-  flag: MyString
+  flag_url: MyString
   capital: MyString
   language: MyString
   currency: MyString
@@ -10,7 +10,7 @@ one:
 
 two:
   name: MyString
-  flag: MyString
+  flag_url: MyString
   capital: MyString
   language: MyString
   currency: MyString

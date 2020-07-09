@@ -1,1 +1,1 @@
-User.all doesn't work
+In seeds file, Sightseeing.create doesn't work
