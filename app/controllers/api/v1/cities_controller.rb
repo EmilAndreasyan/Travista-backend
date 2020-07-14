@@ -16,28 +16,34 @@ class Api::V1::CitiesController < ApplicationController
     end
 
     def create
-        @city = @country.cities.build(city_params)
-        if @country.update_city(@city) != ("city name can't be blank" || "please, add a description" || "the city already exists")
-            @city.save
-            render json: @country
-        else
-            render json: {error: 'Error adding city'}
-        end
-   
-        # @city = @country.city.build(city_params)
-        # if @city.save
-        #     render json: @city
+        #byebug
+        # @city = @country.cities.build(city_params)
+        # if @country.update_city(@city) != ("city name can't be blank" || "please, add a description" || "the city already exists")
+        #     @city.save
+        #     render json: @country
         # else
-        #     render json: {error: 'Error creating a city'}
+        #     render json: {error: 'Error adding city'}
         # end
+        @city = @country.cities.build(city_params)
+        if @city.save
+            render json: @city
+        else
+            render json: {error: 'Error creating a city'}
+        end
     end
 
     def edit
-
+        @city = @country.cities.find_by(id: params[:id])
     end
-
+    
     def update
-        
+        city = @country.cities.find_by(id: params[:id])
+        city.update(city_params)
+        if city.save
+        render json: @country
+        else
+        render json: {error: 'Error updating city'}
+        end
     end
     
 
@@ -47,10 +53,10 @@ class Api::V1::CitiesController < ApplicationController
         city.destroy
         render json: country
     end
-
+    
     private
     def set_country
-        @country = Country.find(params[:country_id])
+        @country ||= Country.find(params[:country_id])
     end
 
     def city_params

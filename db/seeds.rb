@@ -28,9 +28,9 @@ City.destroy_all
 
 @usa = Country.create(id: 1, name: 'USA', capital: 'Washington', language: 'English', currency: 'US dollar', area: 3797000000, flag_url: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/United-States-orb.png')
 
-@france = Country.create(id: 2, name: 'France', capital: 'Paris', language: 'French', currency: 'Euro', area: 116347, flag_url: 'https://upload.wikimedia.org/wikipedia/commons/d/db/FranceFlag-ico.png')
+@france = Country.create(id: 2, name: 'France', capital: 'Paris', language: 'French', currency: 'Euro', area: 248573, flag_url: 'https://upload.wikimedia.org/wikipedia/commons/d/db/FranceFlag-ico.png')
 
-@italy = Country.create(id: 3, name: 'Italy', capital: 'Rome', language: 'Italian', currency: 'Euro', area: 248573, flag_url: 'https://www.shareicon.net/data/256x256/2015/04/16/23636_flag_256x256.png')
+@italy = Country.create(id: 3, name: 'Italy', capital: 'Rome', language: 'Italian', currency: 'Euro', area: 116347, flag_url: 'https://www.shareicon.net/data/256x256/2015/04/16/23636_flag_256x256.png')
 
 @sacramento = City.create(id: 4, country: @usa, name: 'Sacramento', image_url: 'https://www.publicdomainpictures.net/pictures/310000/nahled/tower-bridge-in-sacramento.jpg', population: 2123000, description: 'Sacramento is the capital of the State of California and is the fifth largest city in the state')
 

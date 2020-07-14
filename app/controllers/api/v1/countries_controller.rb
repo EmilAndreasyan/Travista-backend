@@ -22,14 +22,17 @@ class Api::V1::CountriesController < ApplicationController
     end
     
     def edit
-    
+        @country = Country.find(params[:id]) 
     end
     
     def update
-        @country = Country.find(params[:id])
-        @country.update(name: params["country"]["name"])
-        @country.save
-        render json: @country
+        country = Country.find(params[:id]) 
+        country.update(country_params)
+        if country.save
+        render json: country
+        else
+        render json: {error: 'Error updating country'}
+        end
     end
     
     
