@@ -32,17 +32,17 @@ City.destroy_all
 
 @italy = Country.create(id: 3, name: 'Italy', capital: 'Rome', language: 'Italian', currency: 'Euro', area: 116347, flag_url: 'https://www.shareicon.net/data/256x256/2015/04/16/23636_flag_256x256.png')
 
-@sacramento = City.create(id: 4, country: @usa, name: 'Sacramento', image_url: 'https://www.publicdomainpictures.net/pictures/310000/nahled/tower-bridge-in-sacramento.jpg', population: 2123000, description: 'Sacramento is the capital of the State of California and is the fifth largest city in the state')
+@sacramento = City.create(id: 4, country: @usa, name: 'Sacramento', image_url: 'https://www.publicdomainpictures.net/pictures/310000/nahled/tower-bridge-in-sacramento.jpg', population: 2123000, description: 'Sacramento is the capital of the State of California and is the fifth largest city in the state', comment: '')
 
-@san_francisco = City.create(id: 5, country: @usa, name: 'San Francisco', image_url: 'https://live.staticflickr.com/609/32520117426_3a2a20d705_b.jpg', population: 3314000, description: 'A popular tourist destination, San Francisco is known for its cool summers, fog, steep rolling hills, eclectic mix of architecture')
+@san_francisco = City.create(id: 5, country: @usa, name: 'San Francisco', image_url: 'https://live.staticflickr.com/609/32520117426_3a2a20d705_b.jpg', population: 3314000, description: 'A popular tourist destination, San Francisco is known for its cool summers, fog, steep rolling hills, eclectic mix of architecture', comment: '')
 
-@paris = City.create(id: 6, country: @france, name: 'Paris', image_url: 'https://cdn.pixabay.com/photo/2019/07/21/16/29/paris-4353082_960_720.jpg', population: 2148000, description: "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.")
+@paris = City.create(id: 6, country: @france, name: 'Paris', image_url: 'https://cdn.pixabay.com/photo/2019/07/21/16/29/paris-4353082_960_720.jpg', population: 2148000, description: "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.", comment: '')
 
-@lyon = City.create(id: 7, country: @france, name: 'Lyon', image_url: 'https://live.staticflickr.com/5282/5343959389_ab991fa1f5_b.jpg', population: 513275, description: "Lyon, the capital city in France’s Auvergne-Rhône-Alpes region, sits at the junction of the Rhône and Saône rivers.")
+@lyon = City.create(id: 7, country: @france, name: 'Lyon', image_url: 'https://live.staticflickr.com/5282/5343959389_ab991fa1f5_b.jpg', population: 513275, description: "Lyon, the capital city in France’s Auvergne-Rhône-Alpes region, sits at the junction of the Rhône and Saône rivers.", comment: '')
 
 @rome = City.create(id: 8, country: @italy, name: 'Rome', image_url: 'https://i2.pickpik.com/photos/870/2/374/italy-rome-coliseum-preview.jpg', population: 2860009, description: "Rome is the capital city and a special comune of Italy as well as the capital of the Lazio region. The city has been a major human settlement for over two millennia.")
 
-@florence = City.create(id: 9, country: @italy, name: 'Florence', image_url: 'https://cdn.pixabay.com/photo/2017/03/15/21/51/florence-2147625_960_720.jpg', population: 2860009, description: "Florence, capital of Italy’s Tuscany region, is home to many masterpieces of Renaissance art and architecture.")
+@florence = City.create(id: 9, country: @italy, name: 'Florence', image_url: 'https://cdn.pixabay.com/photo/2017/03/15/21/51/florence-2147625_960_720.jpg', population: 2860009, description: "Florence, capital of Italy’s Tuscany region, is home to many masterpieces of Renaissance art and architecture.", comment: '')
 
 
 

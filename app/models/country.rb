@@ -1,7 +1,7 @@
 class Country < ApplicationRecord
     has_many :cities
 
-    validates_presence_of :language, :currency, :area
+    # validates_presence_of :language, :currency, :area
     validates_presence_of :name, :capital, uniqueness: true
     # validates :size, inclusion: {in: %w(small medium large), message: "%{value} is not a valid size"}
 

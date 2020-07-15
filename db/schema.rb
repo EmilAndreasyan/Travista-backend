@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_022302) do
     t.string "image_url"
     t.integer "population"
     t.string "description"
+    t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

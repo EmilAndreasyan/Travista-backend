@@ -6,6 +6,7 @@ class CreateCities < ActiveRecord::Migration[6.0]
       t.string :image_url
       t.integer :population
       t.string :description
+      t.text :comment
 
       t.timestamps
     end

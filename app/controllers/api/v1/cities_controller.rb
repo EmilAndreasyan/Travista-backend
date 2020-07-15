@@ -60,6 +60,6 @@ class Api::V1::CitiesController < ApplicationController
     end
 
     def city_params
-        params.require(:city).permit(:country_id, :name, :image_url, :population, :description)
+        params.require(:city).permit(:country_id, :name, :image_url, :population, :description, :comment)
     end
 end
