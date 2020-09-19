@@ -14,8 +14,6 @@ class Country < ApplicationRecord
             return "city name can't be blank"
         elsif city.name == self.city.name
             return "the city already exists"
-        elsif city.description == ''
-            return "please, add a description"
         else
             self.save
         end

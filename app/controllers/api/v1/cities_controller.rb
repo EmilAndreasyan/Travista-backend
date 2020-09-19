@@ -16,17 +16,17 @@ class Api::V1::CitiesController < ApplicationController
     end
 
     def create
-        #byebug
+       # byebug
         # @city = @country.cities.build(city_params)
-        # if @country.update_city(@city) != ("city name can't be blank" || "please, add a description" || "the city already exists")
+        # if @country.update_city(@city) != ("city name can't be blank" || "the city already exists")
         #     @city.save
         #     render json: @country
         # else
         #     render json: {error: 'Error adding city'}
         # end
-        @city = @country.cities.build(city_params)
-        if @city.save
-            render json: @city
+        city = @country.cities.build(city_params)
+        if city.save
+            render json: city
         else
             render json: {error: 'Error creating a city'}
         end

@@ -1,7 +1,6 @@
 class Api::V1::CountriesController < ApplicationController
 
     def index
-        #byebug
         @countries = Country.all
         render json: @countries
     end
@@ -12,7 +11,6 @@ class Api::V1::CountriesController < ApplicationController
     end
     
     def create
-        #byebug
         @country = Country.new(country_params)
         if @country.save
             render json: @country
@@ -22,7 +20,7 @@ class Api::V1::CountriesController < ApplicationController
     end
     
     def edit
-        @country = Country.find(params[:id]) 
+        country = Country.find(params[:id]) 
     end
     
     def update
@@ -37,8 +35,8 @@ class Api::V1::CountriesController < ApplicationController
     
     
     def destroy
-        @country = Country.find(params[:id])
-        @country.destroy
+        country = Country.find(params[:id])
+        country.destroy
     end
     
     private
